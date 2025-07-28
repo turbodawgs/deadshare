@@ -1,0 +1,367 @@
+/* Global styles for DeadShare */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* App styles */
+.app {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+}
+
+.app-header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #333;
+  padding: 32px 20px;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 56px;
+}
+
+.app-subtitle {
+  font-size: 18px;
+  color: #ccc;
+  margin: 0 0 24px 0;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+  line-height: 1.5;
+}
+
+.mode-switcher {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.mode-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.mode-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.mode-button.active {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  border-color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+  .mode-switcher {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .mode-button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+.step-indicator {
+  padding: 32px 20px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.step.active, .step.completed {
+  opacity: 1;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid #666;
+  transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+}
+
+.step.completed .step-number {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: white;
+}
+
+.step-label {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.step-divider {
+  width: 80px;
+  height: 2px;
+  background: #444;
+  margin: 0 20px;
+}
+
+.app-main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.global-error {
+  margin-bottom: 32px;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid #f44336;
+  border-radius: 8px;
+  color: #f44336;
+}
+
+.error-icon {
+  font-size: 20px;
+}
+
+.error-text {
+  flex: 1;
+}
+
+.error-dismiss {
+  background: none;
+  border: none;
+  color: #f44336;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-dismiss:hover {
+  opacity: 0.7;
+}
+
+.step-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.step-section h2 {
+  font-size: 32px;
+  margin: 0 0 16px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.step-description {
+  font-size: 16px;
+  color: #ccc;
+  text-align: center;
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 32px;
+}
+
+.back-button-container {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.back-button {
+  background: #444;
+  border: 1px solid #666;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: #555;
+  transform: translateY(-1px);
+}
+
+.app-footer {
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid #333;
+  padding: 32px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.security-features {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.feature-icon {
+  font-size: 16px;
+}
+
+.footer-note {
+  font-size: 12px;
+  color: #888;
+  font-style: italic;
+}
+
+/* Component styles */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+.error-message {
+  color: #f44336;
+  padding: 12px;
+  background-color: #2a1414;
+  border-radius: 4px;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 36px;
+  }
+
+  .logo {
+    font-size: 42px;
+  }
+
+  .app-subtitle {
+    font-size: 16px;
+  }
+
+  .step-content {
+    padding: 24px;
+  }
+
+  .step-section h2 {
+    font-size: 24px;
+  }
+
+  .steps {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .step-divider {
+    width: 2px;
+    height: 30px;
+    margin: 0;
+  }
+
+  .security-features {
+    gap: 16px;
+  }
+
+  .feature {
+    font-size: 12px;
+  }
+}
